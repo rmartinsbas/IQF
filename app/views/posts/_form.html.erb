@@ -1,0 +1,49 @@
+<% @post.tags.build %>
+<%= form_for(@post) do |post_form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this IQF from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= post_form.label :project %><br />
+    <%= post_form.text_field :project %>
+  </div>
+  <div class="field">
+    <%= post_form.label :author %><br />
+    <%= post_form.text_field :author %>
+  </div>
+  <div class="field">
+    <%= post_form.label :destination %><br />
+    <%= post_form.text_field :destination %>
+  </div>
+  <div class="field">
+    <%= post_form.label :discipline %><br />
+    <%= post_form.text_field :discipline %>
+  </div>
+  <div class="field">
+    <%= post_form.label :tag %><br />
+    <%= post_form.text_field :tag %>
+  </div>
+  <div class="field">
+    <%= post_form.label :subject %><br />
+    <%= post_form.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= post_form.label :content %><br />
+    <%= post_form.text_area :content %>
+  </div>
+  <h2>Status</h2>
+  <%= render :partial => 'tags/form',
+             :locals => {:form => post_form} %>
+  <div class="actions">
+    <%= post_form.submit %>
+  </div>
+<% end %>

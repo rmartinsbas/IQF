@@ -1,0 +1,36 @@
+<h1>Listing IQF's</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>Author</th>
+    <th>Destination</th>
+    <th>Discipline</th>
+    <th>Tag</th>
+    <th>Subject</th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.project %></td>
+    <td><%= post.author %></td>
+    <td><%= post.destination %></td>
+    <td><%= post.discipline %></td>
+    <td><%= post.tag %></td>
+    <td><%= post.subject %></td>
+
+    <td><%= link_to 'Add a Comment', post %></td>
+    <td><%= link_to 'Edit IQF', edit_post_path(post) %></td>
+    <td><%= link_to 'Delete IQF', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New IQF', new_post_path %>
+<%= link_to 'Back', home_index_path %>
