@@ -14,22 +14,22 @@
 
   <div class="field">
     <%= post_form.label :project %><br />
-    <%= post_form.text_field :project %>
+    <%= post_form.select(:project, [['CASSINO', '009'], ['CURUMIM', '010'], ['SALINAS', '011']]) %>
   </div>
   <div class="field">
     <%= post_form.label :author %><br />
-    <%= post_form.text_field :author %>
+    <%= post_form.select(:author, [['ECOVIX', 'OVX'], ['COSCO', 'COS'], ['HBR', 'HKQ'], ['VICTOR MARINE', 'VC8'], ['HEINEM HOPMAN', 'HEI'], ['HUISMAN', 'HCG'], ['NOV', 'ND1'], ['ALFA NAVAL', 'LIM'], ['GEA', 'GBR'], ['WARTSILA', 'WNF'], ['GE', 'GC1']]) %>
   </div>
   <div class="field">
     <%= post_form.label :destination %><br />
-    <%= post_form.text_field :destination %>
+    <%= post_form.select(:destination, [['ECOVIX', 'OVX'], ['COSCO', 'COS'], ['HBR', 'HKQ'], ['VICTOR MARINE', 'VC8'], ['HEINEM HOPMAN', 'HEI'], ['HUISMAN', 'HCG'], ['NOV', 'ND1'], ['ALFA NAVAL', 'LIM'], ['GEA', 'GBR'], ['WARTSILA', 'WNF'], ['GE', 'GC1']]) %>
   </div>
   <div class="field">
     <%= post_form.label :discipline %><br />
-    <%= post_form.text_field :discipline %>
+    <%= post_form.select(:discipline, [['GENERAL', 'GEN'], ['HULL STRUCTURE', 'HST'], ['OUTFITTING', 'OUT'], ['ARCHITECTURE', 'ARC'], ['MARINE MACHINERY', 'MMA'], ['DRILLING MACHINERY', 'DMA'], ['MARINE PIPING', 'MPI'], ['HVAC', 'HVA'], ['DRILLING PIPING', 'DPI'], ['ELECTRICAL POWER', 'EPO'], ['INSTRUMENT', 'INS'], ['COMMUNICATION', 'COM']]) %>
   </div>
   <div class="field">
-    <%= post_form.label :tag %><br />
+    <%= post_form.label :number %><br />
     <%= post_form.text_field :tag %>
   </div>
   <div class="field">
@@ -44,6 +44,6 @@
   <%= render :partial => 'tags/form',
              :locals => {:form => post_form} %>
   <div class="actions">
-    <%= post_form.submit %>
+    <%= post_form.submit "Create IQF"%>
   </div>
 <% end %>
