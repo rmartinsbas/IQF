@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
                     :length => { :minimum => 3 }
   validates :author,  :presence => true,
                     :length => { :minimum => 3 }
-  validates :destination,  :presence => true,
+  validates :destination, :presence => true,
                     :length => { :minimum => 3 }
   validates :discipline,  :presence => true,
                     :length => { :minimum => 3 }
@@ -17,8 +17,8 @@ class Post < ActiveRecord::Base
                     :length => { :minimum => 10 }
 
   has_many :comments, :dependent => :destroy
-  has_many :tags
- 
-  accepts_nested_attributes_for :tags, :allow_destroy => :true,
+    has_many :tags
+
+    accepts_nested_attributes_for :tags, :allow_destroy => :true,
     :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? } }
 end
